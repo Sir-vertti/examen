@@ -266,18 +266,8 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const TextField(
-          decoration: InputDecoration(
-            hintText: 'Search',
-            border: InputBorder.none,
-          ),
-        ),
-      ),
-      body: const Center(
-        child: Text('Search Page'),
-      ),
+    return const Center(
+      child: Text('Search Page'),
     );
   }
 }
