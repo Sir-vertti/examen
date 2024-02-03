@@ -92,23 +92,19 @@ class HomeScreen extends StatelessWidget {
       child: ListView(
         children: const <Widget>[
           HeaderSection(),
+          LargeImageCard(),
           CupertinoListTile('Instagram', ' 1', Icons.apps),
           CupertinoListTile('Whatsapp', ' 2', Icons.camera),
+          SmallImageCard(),
           CupertinoListTile('Hi 5', ' 3', Icons.message),
           CupertinoListTile('USLA NAV', ' 4', Icons.music_note),
           CupertinoListTile('Hola no se que poner', ' 5', Icons.map),
           CupertinoListTile('Ya bai', ' 6', Icons.phone),
-          SmallImageCard(),
-          SmallImageCard(),
           LargeImageCard(),
           CupertinoListTile('Amo a mi novia', ' 7', Icons.email),
           CupertinoListTile('????', ' 8', Icons.games),
           CupertinoListTile('Ya suelteme', ' 9', Icons.book),
           CupertinoListTile('Calendario', ' 10', Icons.calendar_today),
-          CupertinoListTile('Ya no se', ' 11', Icons.water),
-          CupertinoListTile('Casi la cago', ' 12', Icons.timer),
-          SmallImageCard(),
-          SmallImageCard(),
         ],
       ),
     );
@@ -265,42 +261,13 @@ class CupertinoListTile extends StatelessWidget {
   }
 }
 
-class AppList extends StatelessWidget {
-  const AppList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: const <Widget>[
-        CupertinoListTile('App 1', 'Description 1', Icons.apps),
-        CupertinoListTile('App 2', 'Description 2', Icons.camera),
-        CupertinoListTile('App 3', 'Description 3', Icons.message),
-        CupertinoListTile('App 4', 'Description 4', Icons.music_note),
-        CupertinoListTile('App 5', 'Description 5', Icons.map),
-        CupertinoListTile('App 6', 'Description 6', Icons.phone),
-        CupertinoListTile('App 7', 'Description 7', Icons.email),
-        CupertinoListTile('App 8', 'Description 8', Icons.games),
-        CupertinoListTile('App 9', 'Description 9', Icons.book),
-        CupertinoListTile('App 10', 'Description 10', Icons.calendar_today),
-      ],
-    );
-  }
-}
-
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        HeaderSection(),
-        Padding(
-          padding: EdgeInsets.all(16.0),
-          child: CupertinoSearchTextField(),
-        ),
-        AppList(), // Add this line to include the AppList
-      ],
+    return const Center(
+      child: Text('Search Page'),
     );
   }
 }
@@ -310,8 +277,26 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Cart Page'),
+    return Scaffold(
+      body: Center(
+        child: ListView(
+          children: const <Widget>[
+            CupertinoListTile('Instagram', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile('Whatsapp', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile('Hi 5', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile('USLA NAV', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile(
+                'Hola no se que poner', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile('Ya bai', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile(
+                'Amo a mi novia', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile('????', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile(
+                'Ya suelteme', 'Ready to Pay', Icons.attach_money),
+            CupertinoListTile('Calendario', 'Ready to Pay', Icons.attach_money),
+          ],
+        ),
+      ),
     );
   }
 }
